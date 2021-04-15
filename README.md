@@ -1,7 +1,7 @@
 # LaserDefender
 ## Learning Game Development Project 5
 
-Laser Defender is a Top-Down Space shooter game.
+Laser Defender is a 2D Top-Down Space shooter game.
 
 ### Controls:
 
