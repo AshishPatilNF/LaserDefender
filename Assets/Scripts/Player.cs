@@ -5,6 +5,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject laserPrefab;
+
+    [SerializeField]
+    private GameObject Disposable;
+
+    private float firerate = 0.2f;
+
+    Coroutine firingCoroutine;
+
     private float speed = 5f;
 
     float xMin;
@@ -23,6 +33,30 @@ public class Player : MonoBehaviour
     void Update()
     {
         Movement();
+        Shooting();
+    }
+
+    private void Shooting()
+    {
+        if(Input.GetButtonDown("Fire1"))
+        {
+            firingCoroutine = StartCoroutine(Refire());
+        }
+
+        if(Input.GetButtonUp("Fire1"))
+        {
+            StopCoroutine(firingCoroutine);
+        }
+    }
+
+    IEnumerator Refire()
+    {
+        while(true)
+        {
+            GameObject newLaser = Instantiate(laserPrefab, transform.position + new Vector3(0, 0.65f, 0), Quaternion.identity);
+            newLaser.transform.parent = Disposable.transform;
+            yield return new WaitForSeconds(firerate);
+        }
     }
 
     private void Movement()
