@@ -8,8 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private GameObject laserPrefab;
 
-    [SerializeField]
-    private GameObject Disposable;
+    private Disposable disposable;
 
     private float firerate = 0.2f;
 
@@ -26,6 +25,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        disposable = FindObjectOfType<Disposable>();
         playerBounds();
     }
 
@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
         while(true)
         {
             GameObject newLaser = Instantiate(laserPrefab, transform.position + new Vector3(0, 0.65f, 0), Quaternion.identity);
-            newLaser.transform.parent = Disposable.transform;
+            newLaser.transform.parent = disposable.transform;
             yield return new WaitForSeconds(firerate);
         }
     }
