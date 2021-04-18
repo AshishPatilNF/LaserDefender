@@ -10,6 +10,8 @@ public class Player : MonoBehaviour
 
     private EnemySpawner enemySpawner;
 
+    private int health = 1000;
+
     private float firerate = 0.2f;
 
     Coroutine firingCoroutine;

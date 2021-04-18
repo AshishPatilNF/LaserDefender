@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyPathing : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     WaveConfig waveConfig;
 
     List<Transform> waypoints;
+
+    private int health = 100;
 
     int wayPointIndex = 0;
     
@@ -45,6 +47,21 @@ public class EnemyPathing : MonoBehaviour
         else
         {
             Destroy(this.gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        DamageDealer damaging = other.GetComponent<DamageDealer>();
+
+        if(damaging)
+        {
+            health -= damaging.Damage();
+
+            if (health <= 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 }

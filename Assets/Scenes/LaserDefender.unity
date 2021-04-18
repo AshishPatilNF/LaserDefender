@@ -333,7 +333,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &785361616
 GameObject:
@@ -391,7 +391,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &785361619
 MonoBehaviour:
@@ -609,13 +609,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2957783670280264729, guid: 7c026a151bca4a247b8359310dc3bc40, type: 3}
+      propertyPath: m_Radius
+      value: 0.38340235
+      objectReference: {fileID: 0}
+    - target: {fileID: 2957783670280264729, guid: 7c026a151bca4a247b8359310dc3bc40, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.0041332245
+      objectReference: {fileID: 0}
+    - target: {fileID: 2957783670280264729, guid: 7c026a151bca4a247b8359310dc3bc40, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.00000047683716
+      objectReference: {fileID: 0}
+    - target: {fileID: 5375561767354640892, guid: 7c026a151bca4a247b8359310dc3bc40, type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8460796558091112816, guid: 7c026a151bca4a247b8359310dc3bc40, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8460796558091112818, guid: 7c026a151bca4a247b8359310dc3bc40, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8460796558091112818, guid: 7c026a151bca4a247b8359310dc3bc40, type: 3}
       propertyPath: m_LocalPosition.x
@@ -656,14 +672,6 @@ PrefabInstance:
     - target: {fileID: 8460796558091112818, guid: 7c026a151bca4a247b8359310dc3bc40, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8460796558091112819, guid: 7c026a151bca4a247b8359310dc3bc40, type: 3}
-      propertyPath: Disposable
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8460796558091112819, guid: 7c026a151bca4a247b8359310dc3bc40, type: 3}
-      propertyPath: disposable
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c026a151bca4a247b8359310dc3bc40, type: 3}

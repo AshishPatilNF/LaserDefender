@@ -38,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
         for (int i = 0; i < enemiesCount; i++)
         {
             GameObject newEnemy = Instantiate(enemy, spawnPosition.position, Quaternion.identity);
-            newEnemy.GetComponent<EnemyPathing>().SetWaveConfig(waveConfigs[waveIndex]);
+            newEnemy.GetComponent<Enemy>().SetWaveConfig(waveConfigs[waveIndex]);
             newEnemy.transform.parent = cleanup.transform;
             yield return new WaitForSeconds(spawnGap);
         }
