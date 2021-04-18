@@ -7,7 +7,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     List<WaveConfig> waveConfigs;
 
-    private Disposable disposable;
+    [SerializeField]
+    private GameObject cleanup;
 
     private GameObject enemy;
 
@@ -18,10 +19,12 @@ public class EnemySpawner : MonoBehaviour
     private float spawnGap;
 
     // Start is called before the first frame update
-    void Start()
+    IEnumerator Start()
     {
-        disposable = FindObjectOfType<Disposable>();
-        StartCoroutine(SpawnWave());
+        do
+        {
+            yield return StartCoroutine(SpawnWave());
+        } while (true);
     }
 
     // Update is called once per frame
@@ -36,7 +39,7 @@ public class EnemySpawner : MonoBehaviour
         {
             GameObject newEnemy = Instantiate(enemy, spawnPosition.position, Quaternion.identity);
             newEnemy.GetComponent<EnemyPathing>().SetWaveConfig(waveConfigs[waveIndex]);
-            newEnemy.transform.parent = disposable.transform;
+            newEnemy.transform.parent = cleanup.transform;
             yield return new WaitForSeconds(spawnGap);
         }
     }
@@ -51,6 +54,10 @@ public class EnemySpawner : MonoBehaviour
             spawnGap = waveConfigs[waveIndex].GetTimeBetweenSpawns();
             yield return StartCoroutine(SpawnEnemy(waveIndex));
         }
-        StartCoroutine(SpawnWave());
+    }
+
+    public Transform CleanUpContainer()
+    {
+        return cleanup.transform;
     }
 }
