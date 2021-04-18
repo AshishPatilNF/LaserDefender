@@ -9,8 +9,6 @@ public class EnemySpawner : MonoBehaviour
 
     private Disposable disposable;
 
-    private int waveIndex = 0;
-
     private GameObject enemy;
 
     private Transform spawnPosition;
@@ -23,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         disposable = FindObjectOfType<Disposable>();
-        SpawnNextWave();
+        StartCoroutine(SpawnWave());
     }
 
     // Update is called once per frame
@@ -32,32 +30,27 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
-    IEnumerator SpawnEnemy()
+    IEnumerator SpawnEnemy(int waveIndex)
     {
         for (int i = 0; i < enemiesCount; i++)
         {
             GameObject newEnemy = Instantiate(enemy, spawnPosition.position, Quaternion.identity);
+            newEnemy.GetComponent<EnemyPathing>().SetWaveConfig(waveConfigs[waveIndex]);
             newEnemy.transform.parent = disposable.transform;
             yield return new WaitForSeconds(spawnGap);
         }
-        waveIndex++;
-        SpawnNextWave();
     }
 
-    private void SpawnNextWave()
+    IEnumerator SpawnWave()
     {
-        if(waveIndex <= waveConfigs.Count - 1)
+        for (int waveIndex = 0; waveIndex < waveConfigs.Count; waveIndex++)
         {
             enemy = waveConfigs[waveIndex].GetEnemyPrefab();
             spawnPosition = waveConfigs[waveIndex].GetWaypoints()[0];
             enemiesCount = waveConfigs[waveIndex].GetNumberOfEnemies();
             spawnGap = waveConfigs[waveIndex].GetTimeBetweenSpawns();
-            StartCoroutine(SpawnEnemy());
+            yield return StartCoroutine(SpawnEnemy(waveIndex));
         }
-        else
-        {
-            waveIndex = 0;
-            SpawnNextWave();
-        }
+        StartCoroutine(SpawnWave());
     }
 }

@@ -350,6 +350,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveConfigs:
   - {fileID: 11400000, guid: a7653877f4748c1468e636bb3772e9bb, type: 2}
+  - {fileID: 11400000, guid: 3088b61b8d0944b4d820561869712ea5, type: 2}
+  - {fileID: 11400000, guid: a7b12158311ab144aa9704e8ff659ca2, type: 2}
   - {fileID: 11400000, guid: 305d4e83ecee50f43a471281f248e19b, type: 2}
 --- !u!1 &1744120975
 GameObject:
