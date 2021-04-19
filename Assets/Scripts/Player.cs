@@ -5,17 +5,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Player Laser")]
     [SerializeField]
     private GameObject laserPrefab;
 
-    private EnemySpawner enemySpawner;
-
-    private int health = 1000;
+    Coroutine firingCoroutine;
 
     private float firerate = 0.2f;
 
-    Coroutine firingCoroutine;
-
+    [Header("Movement")]
+    [SerializeField]
     private float speed = 5f;
 
     float xMin;
@@ -23,6 +22,12 @@ public class Player : MonoBehaviour
     float yMin;
     float yMax;
     float padding = 0.5f;
+
+    [Header("Health")]
+    [SerializeField]
+    private int health = 1000;
+
+    private EnemySpawner enemySpawner;
 
     // Start is called before the first frame update
     void Start()
@@ -75,5 +80,21 @@ public class Player : MonoBehaviour
         xMax = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - padding;
         yMin = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
         yMax = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        DamageDealer damaging = other.GetComponent<DamageDealer>();
+
+        if (damaging)
+        {
+            health -= damaging.Damage();
+            Destroy(other.gameObject);
+
+            if (health <= 0)
+            {
+                Destroy(this.gameObject);
+            }
+        }
     }
 }

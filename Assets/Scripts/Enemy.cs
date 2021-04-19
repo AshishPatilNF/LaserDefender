@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField]
+    float shotCounter;
+
+    [SerializeField]
+    GameObject enemyLaser;
+
+    EnemySpawner enemySpawner;
+
+    float minShotTime = 0.2f;
+
+    float maxShotTime = 3f;
+
     WaveConfig waveConfig;
 
     List<Transform> waypoints;
@@ -16,6 +28,8 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemySpawner = FindObjectOfType<EnemySpawner>();
+        shotCounter = Random.Range(minShotTime, maxShotTime);
         transform.position = waypoints[wayPointIndex].position;
     }
 
@@ -23,6 +37,19 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         Movement();
+        Fire();
+    }
+
+    private void Fire()
+    {
+        shotCounter -= Time.deltaTime;
+
+        if (shotCounter <= 0)
+        {
+            GameObject newEnemyShot = Instantiate(enemyLaser, transform.position + new Vector3(0, -0.65f, 0), Quaternion.identity);
+            newEnemyShot.transform.parent = enemySpawner.CleanUpContainer();
+            shotCounter = Random.Range(minShotTime, maxShotTime);
+        }
     }
 
     public void SetWaveConfig(WaveConfig pathConfig)
@@ -57,6 +84,7 @@ public class Enemy : MonoBehaviour
         if(damaging)
         {
             health -= damaging.Damage();
+            Destroy(other.gameObject);
 
             if (health <= 0)
             {
