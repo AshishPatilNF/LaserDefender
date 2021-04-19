@@ -8,6 +8,8 @@ public class EnemyLaser : MonoBehaviour
 
     private Rigidbody2D rigid;
 
+    private int health = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +20,20 @@ public class EnemyLaser : MonoBehaviour
     void Update()
     {
         rigid.velocity = new Vector2(0, -speed);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        DamageDealer damaging = other.GetComponent<DamageDealer>();
+
+        if (damaging)
+        {
+            health -= damaging.Damage();
+
+            if (health <= 0)
+            {
+                Destroy(this.gameObject);
+            }
+        }
     }
 }

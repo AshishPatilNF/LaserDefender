@@ -89,7 +89,6 @@ public class Player : MonoBehaviour
         if (damaging)
         {
             health -= damaging.Damage();
-            Destroy(other.gameObject);
 
             if (health <= 0)
             {
