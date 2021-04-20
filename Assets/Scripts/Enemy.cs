@@ -5,6 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
+    GameObject explosionParticleVFX;
+
+    [SerializeField]
     float shotCounter;
 
     [SerializeField]
@@ -87,6 +90,9 @@ public class Enemy : MonoBehaviour
 
             if (health <= 0)
             {
+                GameObject newVFX = Instantiate(explosionParticleVFX, transform.position, Quaternion.identity);
+                newVFX.transform.parent = enemySpawner.CleanUpContainer();
+                Destroy(newVFX, 1f);
                 Destroy(this.gameObject);
             }
         }

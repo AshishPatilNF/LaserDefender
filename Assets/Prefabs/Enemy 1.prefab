@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bad3afb4e45d414a9e7fa6d8fbeffa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionParticleVFX: {fileID: 1288881398147366949, guid: 2b65fde1d3fea9d4bae1861b5c1f042b, type: 3}
   shotCounter: 0
   enemyLaser: {fileID: 662848618566430397, guid: ca55543e575b1ed49aa99d4d1f9f4796, type: 3}
 --- !u!114 &-7885240971160590208

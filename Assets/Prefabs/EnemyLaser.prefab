@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32007198601604a4086996c8077bdba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laserExplosionVFX: {fileID: 7105619288754888048, guid: 42948223c7fecd64087f35d0e7f58332, type: 3}
 --- !u!114 &6877308578903176974
 MonoBehaviour:
   m_ObjectHideFlags: 0

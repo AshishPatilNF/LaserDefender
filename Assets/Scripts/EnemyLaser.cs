@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class EnemyLaser : MonoBehaviour
 {
+    [SerializeField]
+    GameObject laserExplosionVFX;
+
+    EnemySpawner enemySpawner;
+
     private float speed = 10f;
 
     private Rigidbody2D rigid;
@@ -13,6 +18,7 @@ public class EnemyLaser : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemySpawner = FindObjectOfType<EnemySpawner>();
         rigid = GetComponent<Rigidbody2D>();
     }
 
@@ -32,6 +38,9 @@ public class EnemyLaser : MonoBehaviour
 
             if (health <= 0)
             {
+                GameObject newLExplosionVFX = Instantiate(laserExplosionVFX, transform.position, Quaternion.identity);
+                newLExplosionVFX.transform.parent = enemySpawner.CleanUpContainer();
+                Destroy(newLExplosionVFX, 1f);
                 Destroy(this.gameObject);
             }
         }
