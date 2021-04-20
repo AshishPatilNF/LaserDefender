@@ -4,14 +4,25 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Enemy Laser")]
     [SerializeField]
-    GameObject explosionParticleVFX;
-
+    GameObject enemyLaser;
+    
     [SerializeField]
     float shotCounter;
 
+    [Header("VFX")]
     [SerializeField]
-    GameObject enemyLaser;
+    GameObject explosionParticleVFX;
+
+    
+
+    [Header("Audio")]
+    [SerializeField]
+    AudioClip laserAudioClip;
+
+    [SerializeField]
+    AudioClip enemyDeathAudioClip;
 
     EnemySpawner enemySpawner;
 
@@ -51,6 +62,7 @@ public class Enemy : MonoBehaviour
         {
             GameObject newEnemyShot = Instantiate(enemyLaser, transform.position + new Vector3(0, -0.65f, 0), Quaternion.identity);
             newEnemyShot.transform.parent = enemySpawner.CleanUpContainer();
+            AudioSource.PlayClipAtPoint(laserAudioClip, Camera.main.transform.position, 0.1f);
             shotCounter = Random.Range(minShotTime, maxShotTime);
         }
     }
@@ -93,6 +105,7 @@ public class Enemy : MonoBehaviour
                 GameObject newVFX = Instantiate(explosionParticleVFX, transform.position, Quaternion.identity);
                 newVFX.transform.parent = enemySpawner.CleanUpContainer();
                 Destroy(newVFX, 1f);
+                AudioSource.PlayClipAtPoint(enemyDeathAudioClip, Camera.main.transform.position, 0.5f);
                 Destroy(this.gameObject);
             }
         }

@@ -168,6 +168,8 @@ MonoBehaviour:
   laserPrefab: {fileID: 662848618566430397, guid: c5c07903f288ff449af147c247d70592, type: 3}
   speed: 5
   health: 1000
+  laserAudioClip: {fileID: 8300000, guid: 1520e39961fdcc548be41a00ed3e23db, type: 3}
+  playerDeathAudioClip: {fileID: 8300000, guid: adfde437ca407dc4bac31ce8843fb68c, type: 3}
 --- !u!114 &4779744104613120844
 MonoBehaviour:
   m_ObjectHideFlags: 0

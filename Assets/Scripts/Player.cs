@@ -27,6 +27,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int health = 1000;
 
+    [Header("Audio")]
+    [SerializeField]
+    AudioClip laserAudioClip;
+
+    [SerializeField]
+    AudioClip playerDeathAudioClip;
+
+
     private EnemySpawner enemySpawner;
 
     // Start is called before the first frame update
@@ -62,6 +70,7 @@ public class Player : MonoBehaviour
         {
             GameObject newLaser = Instantiate(laserPrefab, transform.position + new Vector3(0, 0.65f, 0), Quaternion.identity);
             newLaser.transform.parent = enemySpawner.CleanUpContainer();
+            AudioSource.PlayClipAtPoint(laserAudioClip, Camera.main.transform.position, 0.1f);
             yield return new WaitForSeconds(firerate);
         }
     }
@@ -92,6 +101,7 @@ public class Player : MonoBehaviour
 
             if (health <= 0)
             {
+                AudioSource.PlayClipAtPoint(playerDeathAudioClip, Camera.main.transform.position);
                 Destroy(this.gameObject);
             }
         }

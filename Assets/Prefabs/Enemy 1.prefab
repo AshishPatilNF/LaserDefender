@@ -116,6 +116,8 @@ MonoBehaviour:
   explosionParticleVFX: {fileID: 1288881398147366949, guid: 2b65fde1d3fea9d4bae1861b5c1f042b, type: 3}
   shotCounter: 0
   enemyLaser: {fileID: 662848618566430397, guid: ca55543e575b1ed49aa99d4d1f9f4796, type: 3}
+  laserAudioClip: {fileID: 8300000, guid: 87b7119ef34c7ea49b101eb718a4d501, type: 3}
+  enemyDeathAudioClip: {fileID: 8300000, guid: 201259dfac889fb468323266a9e5c782, type: 3}
 --- !u!114 &-7885240971160590208
 MonoBehaviour:
   m_ObjectHideFlags: 0
