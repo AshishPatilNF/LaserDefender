@@ -21,6 +21,7 @@ public class Level : MonoBehaviour
     public void LoadGameScene()
     {
         StartCoroutine(DelayLoading(1));
+        FindObjectOfType<GameStatusSingle>().ResetGame();
     }
 
     public void LoadStartMenu()

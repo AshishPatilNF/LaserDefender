@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameStatusSingle : MonoBehaviour
 {
+    [SerializeField]
+    TextMeshProUGUI text;
+
+    int score = 0;
+
     private void Awake()
     {
         int objectCount = FindObjectsOfType<GameStatusSingle>().Length;
@@ -18,14 +24,25 @@ public class GameStatusSingle : MonoBehaviour
             DontDestroyOnLoad(this.gameObject);
         }
     }
-    void Start()
+
+    public void AddScore(int NewScore)
     {
-        
+        score += NewScore;
+        text.text = score.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TextFieldToUse(TextMeshProUGUI textToUse)
     {
-        
+        text = textToUse;
+    }
+
+    public int GetScore()
+    {
+        return score;
+    }
+
+    public void ResetGame()
+    {
+        score = 0;
     }
 }

@@ -24,7 +24,13 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     AudioClip enemyDeathAudioClip;
 
+    [Header("Score")]
+    [SerializeField]
+    int score = 1;
+
     EnemySpawner enemySpawner;
+
+    GameStatusSingle gameState;
 
     float minShotTime = 0.2f;
 
@@ -42,6 +48,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameState = FindObjectOfType<GameStatusSingle>();
         enemySpawner = FindObjectOfType<EnemySpawner>();
         shotCounter = Random.Range(minShotTime, maxShotTime);
         transform.position = waypoints[wayPointIndex].position;
@@ -102,6 +109,7 @@ public class Enemy : MonoBehaviour
 
             if (health <= 0)
             {
+                gameState.AddScore(score);
                 GameObject newVFX = Instantiate(explosionParticleVFX, transform.position, Quaternion.identity);
                 newVFX.transform.parent = enemySpawner.CleanUpContainer();
                 Destroy(newVFX, 1f);
