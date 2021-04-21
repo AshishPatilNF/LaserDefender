@@ -9,6 +9,7 @@ public class EnemyLaser : MonoBehaviour
 
     EnemySpawner enemySpawner;
 
+    [SerializeField]
     private float speed = 10f;
 
     private Rigidbody2D rigid;

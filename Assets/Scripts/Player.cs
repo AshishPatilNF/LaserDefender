@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
 
     Coroutine firingCoroutine;
 
-    private float firerate = 0.2f;
+    private float firerate = 0.1f;
 
     [Header("Movement")]
     [SerializeField]

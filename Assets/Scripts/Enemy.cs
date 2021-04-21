@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Health")]
+    [SerializeField]
+    private int health = 100;
+
     [Header("Enemy Laser")]
     [SerializeField]
     GameObject enemyLaser;
@@ -39,8 +43,6 @@ public class Enemy : MonoBehaviour
     WaveConfig waveConfig;
 
     List<Transform> waypoints;
-
-    private int health = 100;
 
     int wayPointIndex = 0;
     
