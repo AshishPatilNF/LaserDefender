@@ -434,53 +434,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScoreCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 193307225781699792, guid: afdafc087ed479a4dbb6fc8ccdf7411a, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 950
-      objectReference: {fileID: 0}
-    - target: {fileID: 193307225781699792, guid: afdafc087ed479a4dbb6fc8ccdf7411a, type: 3}
-      propertyPath: m_AnchoredPosition.x
+    - target: {fileID: 3417044933109513935, guid: afdafc087ed479a4dbb6fc8ccdf7411a, type: 3}
+      propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 193307225781699792, guid: afdafc087ed479a4dbb6fc8ccdf7411a, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -500
-      objectReference: {fileID: 0}
-    - target: {fileID: 193307225781699793, guid: afdafc087ed479a4dbb6fc8ccdf7411a, type: 3}
-      propertyPath: m_text
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 193307225781699793, guid: afdafc087ed479a4dbb6fc8ccdf7411a, type: 3}
-      propertyPath: m_fontSize
-      value: 125
-      objectReference: {fileID: 0}
-    - target: {fileID: 193307225781699793, guid: afdafc087ed479a4dbb6fc8ccdf7411a, type: 3}
-      propertyPath: m_fontStyle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 193307225781699793, guid: afdafc087ed479a4dbb6fc8ccdf7411a, type: 3}
-      propertyPath: m_fontColor.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 193307225781699793, guid: afdafc087ed479a4dbb6fc8ccdf7411a, type: 3}
-      propertyPath: m_fontColor.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 193307225781699793, guid: afdafc087ed479a4dbb6fc8ccdf7411a, type: 3}
-      propertyPath: m_fontColor.r
-      value: 0.17611182
-      objectReference: {fileID: 0}
-    - target: {fileID: 193307225781699793, guid: afdafc087ed479a4dbb6fc8ccdf7411a, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 125
-      objectReference: {fileID: 0}
-    - target: {fileID: 193307225781699793, guid: afdafc087ed479a4dbb6fc8ccdf7411a, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4278255405
-      objectReference: {fileID: 0}
-    - target: {fileID: 193307225781699793, guid: afdafc087ed479a4dbb6fc8ccdf7411a, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: afdafc087ed479a4dbb6fc8ccdf7411a, type: 3}

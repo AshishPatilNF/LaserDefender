@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -27,6 +28,9 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int health = 1000;
 
+    [SerializeField]
+    private TextMeshProUGUI text;
+
     [Header("Audio")]
     [SerializeField]
     AudioClip laserAudioClip;
@@ -44,6 +48,8 @@ public class Player : MonoBehaviour
         level = FindObjectOfType<Level>();
         enemySpawner = FindObjectOfType<EnemySpawner>();
         playerBounds();
+        health = 1000;
+        text.text = health.ToString();
     }
 
     // Update is called once per frame
@@ -100,6 +106,11 @@ public class Player : MonoBehaviour
         if (damaging)
         {
             health -= damaging.Damage();
+            if(health < 0)
+            {
+                health = 0;
+            }
+            text.text = health.ToString();
 
             if (health <= 0)
             {
