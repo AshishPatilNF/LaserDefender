@@ -15,21 +15,27 @@ public class Level : MonoBehaviour
 
     public void LoadGameOver()
     {
-        SceneManager.LoadScene(2);
+        StartCoroutine(DelayLoading(2));
     }
 
     public void LoadGameScene()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(DelayLoading(1));
     }
 
     public void LoadStartMenu()
     {
-        SceneManager.LoadScene(0);
+        StartCoroutine(DelayLoading(0));
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    IEnumerator DelayLoading(int indexOfScene)
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(indexOfScene);
     }
 }
