@@ -34,12 +34,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     AudioClip playerDeathAudioClip;
 
+    private Level level;
 
     private EnemySpawner enemySpawner;
 
     // Start is called before the first frame update
     void Start()
     {
+        level = FindObjectOfType<Level>();
         enemySpawner = FindObjectOfType<EnemySpawner>();
         playerBounds();
     }
@@ -102,6 +104,7 @@ public class Player : MonoBehaviour
             if (health <= 0)
             {
                 AudioSource.PlayClipAtPoint(playerDeathAudioClip, Camera.main.transform.position);
+                level.LoadGameOver();
                 Destroy(this.gameObject);
             }
         }
