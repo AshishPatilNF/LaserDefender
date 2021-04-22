@@ -5,14 +5,12 @@ Laser Defender is a 2D Top-Down Space shooter game.
 
 ### Controls:
 
-1. .
+1. Use the "WASD Keys" or the "Arrow Keys" to move the Player forward, Left, Right or Backwards.
 
-2. .
+2. Press and Hold the "Space Key" to fire a stream of Laser's.
 
-3. .
+3. The user can "Quit" the game at any given time by pressing the "Q Key" or the "Quit Button".
 
-4. .
-
-This project was developed for the better understanding of Unity Engine and Basics of C#.
+This project was developed for the better understanding of Unity Engine's Particle System, Triggers, Materials, SceneManagement, Coroutines, Audio Source and C# Loops and Lists.
 
 This project was developed as a part of the Udemy course "Complete C# Unity Game Developer 2D" under the guidance of Rick Davidson and Ben Tristem.
