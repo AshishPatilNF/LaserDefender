@@ -27,12 +27,6 @@ public class EnemySpawner : MonoBehaviour
         } while (true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     IEnumerator SpawnEnemy(int waveIndex)
     {
         for (int i = 0; i < enemiesCount; i++)

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6088816916594868190}
   - component: {fileID: 6088816916594868189}
-  - component: {fileID: 8881037415769096036}
   - component: {fileID: 6088816916594868191}
   - component: {fileID: -1210536910229213816}
+  - component: {fileID: 3950133002986451101}
   m_Layer: 7
   m_Name: Enemy 4
   m_TagString: Untagged
@@ -85,22 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &8881037415769096036
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6088816916594868188}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.42
 --- !u!114 &6088816916594868191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,3 +117,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 250
+--- !u!58 &3950133002986451101
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6088816916594868188}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0038657188, y: -0.0038655996}
+  serializedVersion: 2
+  m_Radius: 0.5732194
