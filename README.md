@@ -5,9 +5,9 @@ Laser Defender is a 2D Top-Down Space shooter game.
 
 ### Controls:
 
-1. Use the "WASD Keys" or the "Arrow Keys" to move the Player forward, Left, Right or Backwards.
+1. Use the "WASD Keys" or the "Arrow Keys" to move the Space Ship forward, Left, Right or Backwards.
 
-2. Press and Hold the "Space Key" to fire a stream of Laser's.
+2. Press and Hold the "Space Key" to fire a stream of Lasers.
 
 3. The user can "Quit" the game at any given time by pressing the "Q Key" or the "Quit Button".
 
